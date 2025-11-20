@@ -181,8 +181,8 @@ The article must:
 - Have well-structured H1, H2, H3 headings.
 - Provide context on how to use the image (how to use in campaigns, posts, websites, or what type of audience it attracts).
 - Have a subtle CTA pointing to the image page at {page_url} for download/licensing.
-- Include the image in Markdown at the top: ![OPTIMIZED ALT]({image_url})
-  where the ALT should be descriptive and natural.
+- DO NOT include the image in the Markdown content - the image will be displayed automatically at the top of the post.
+- Start directly with the H1 title and content.
 
 In addition to the article, generate a JSON with the following fields:
 

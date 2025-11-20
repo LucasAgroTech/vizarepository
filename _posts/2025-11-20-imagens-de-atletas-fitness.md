@@ -28,8 +28,6 @@ schema_org: >
 
 # Imagens de Atletas: A Energia do Fitness em Seus Projetos
 
-![Atleta em ação durante treino explosivo](https://db08owkfvwq6e.cloudfront.net/images/47760965-d847-4026-9f0e-bddfbc4c698c/34fc86e8b0b0.avif)
-
 No mundo do marketing e da criação de conteúdo, as imagens desempenham um papel crucial na comunicação da mensagem desejada. Uma imagem poderosa pode atrair a atenção do público e transmitir emoções que muitas vezes as palavras não conseguem. Neste artigo, vamos explorar como imagens de atletas, como a que apresentamos acima, podem ser utilizadas para inspirar e motivar seu público.
 
 ## O Poder das Imagens de Atletas

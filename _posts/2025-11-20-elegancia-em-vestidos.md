@@ -28,8 +28,6 @@ schema_org: >
 
 # Elegância em Vestidos: Inspiração para Ocasões Especiais
 
-![Uma mulher usa um vestido de noite verde escuro em um ambiente vintage dimly lit](https://db08owkfvwq6e.cloudfront.net/images/8cdc2197-2f8c-4e63-a3cc-87b982458ff9/b71b26c9fc33.avif)
-
 A moda é uma poderosa forma de expressão, e vestuários elegantes são frequentemente escolhidos para ocasiões que exigem um toque especial de sofisticação. Neste artigo, vamos explorar como utilizar imagens de vestidos elegantes, como o que apresentamos acima, em suas campanhas de marketing e postagens nas redes sociais.
 
 ## O Poder da Imagem na Moda

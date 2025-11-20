@@ -28,8 +28,6 @@ schema_org: >
 
 # Retratos em Preto e Branco: A Elegância do Corporativo
 
-![Retrato em preto e branco de uma mulher em terno elegante](https://db08owkfvwq6e.cloudfront.net/images/7f4b0d79-8d55-4c5b-a74c-16481bf80269/e22667209c6c.avif)
-
 Os retratos em preto e branco têm o poder de capturar a essência da elegância e sofisticação, especialmente em ambientes corporativos. A imagem de uma mulher em um terno ajustado, como a que apresentamos aqui, é um excelente exemplo de como a fotografia pode ser utilizada para comunicar uma forte mensagem de profissionalismo e estilo.
 
 ## O Poder dos Retratos em Campanhas de Branding

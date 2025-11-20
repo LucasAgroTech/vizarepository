@@ -15,13 +15,23 @@ layout: default
     </div>
   </header>
   
-  <div class="post-content">
-    {% if page.og_image %}
-    <div class="post-featured-image">
-      {% assign image_url = page.og_image %}
-      <img src="https://images.weserv.nl/?url={{ image_url | url_encode }}" alt="{{ page.title }}" loading="lazy" onerror="this.onerror=null; this.src='{{ image_url }}'; this.onerror=null;">
-    </div>
+  {% if page.og_image %}
+  <figure class="post-featured-image">
+    {% assign image_url = page.og_image %}
+    <img src="https://images.weserv.nl/?url={{ image_url | url_encode }}" 
+         alt="{{ page.title | escape }}" 
+         loading="eager" 
+         fetchpriority="high"
+         width="1200"
+         height="800"
+         onerror="this.onerror=null; this.src='{{ image_url }}'; this.onerror=null;">
+    {% if page.meta_description %}
+    <figcaption class="post-image-caption">{{ page.meta_description }}</figcaption>
     {% endif %}
+  </figure>
+  {% endif %}
+  
+  <div class="post-content">
     {{ content }}
   </div>
   
