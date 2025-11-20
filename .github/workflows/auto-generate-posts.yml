@@ -1,0 +1,49 @@
+name: Auto Generate Posts
+
+on:
+  schedule:
+    - cron: "0 3 * * *"  # 03:00 UTC todo dia
+  workflow_dispatch: {}   # permite rodar manualmente
+
+jobs:
+  generate-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Instalar dependências
+        run: |
+          pip install -r requirements.txt
+
+      - name: Gerar posts e fazer deploy
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          # Gerar posts
+          python3 sync_from_sitemap.py
+          
+          # Verificar se há novos posts
+          if git diff --quiet _posts/ data/processed_images.json; then
+            echo "Nenhum novo post gerado"
+            exit 0
+          fi
+          
+          # Configurar git
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          
+          # Adicionar e commitar
+          git add _posts/ data/processed_images.json
+          git commit -m "Auto: Adiciona novos posts gerados automaticamente ($(date +'%Y-%m-%d %H:%M:%S'))" || echo "Nada para commitar"
+          
+          # Push
+          git push origin main || echo "Sem mudanças para push"
+
