@@ -185,7 +185,7 @@ def salvar_post(seo, article_md):
     schema_org = (seo.get("schema_org") or "").replace("\n", " ")
 
     front_matter = f"""---
-layout: default
+layout: post
 title: "{seo.get('seo_title', '').replace('"', '\\"')}"
 seo_title: "{seo.get('seo_title', '').replace('"', '\\"')}"
 date: {hoje}

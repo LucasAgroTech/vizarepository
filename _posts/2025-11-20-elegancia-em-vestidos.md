@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: "Elegância em Vestidos: Inspiração para Ocasões Especiais"
 seo_title: "Elegância em Vestidos: Inspiração para Ocasões Especiais"
 date: 2025-11-20

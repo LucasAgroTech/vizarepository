@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: "Atleta em Ação: Inspire Seus Projetos com Imagens de Fitness"
 seo_title: "Atleta em Ação: Inspire Seus Projetos com Imagens de Fitness"
 date: 2025-11-20

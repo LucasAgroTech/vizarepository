@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: "Retratos em Preto e Branco: A Elegância do Corporativo"
 seo_title: "Retratos em Preto e Branco: A Elegância do Corporativo"
 date: 2025-11-20

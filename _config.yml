@@ -1,0 +1,25 @@
+title: VizaRepository Blog
+description: Premium stock images and visual inspiration
+url: https://lucasagrotech.github.io
+baseurl: /vizarepository
+
+# Build settings
+markdown: kramdown
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+# Theme (usando tema mínimo)
+theme: minima
+
+# Exclude from processing
+exclude:
+  - README.md
+  - QUICKSTART.md
+  - setup.sh
+  - create_github_repo.sh
+  - sync_from_sitemap.py
+  - requirements.txt
+  - data/
+  - .gitignore
+
