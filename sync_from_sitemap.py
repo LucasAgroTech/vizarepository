@@ -1,6 +1,7 @@
 import os
 import json
 import requests
+import re
 from datetime import date
 from slugify import slugify
 from xml.etree import ElementTree as ET
@@ -37,6 +38,61 @@ def fetch_sitemap(url=SITEMAP_URL):
     return resp.text
 
 
+def extrair_url_real_imagem(page_url):
+    """
+    Extrai a URL real da imagem da página do VizaRepo.
+    Tenta pegar do srcset ou da tag img principal.
+    """
+    try:
+        resp = requests.get(page_url, timeout=30, headers={
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+        })
+        resp.raise_for_status()
+        html = resp.text
+        
+        # Tenta pegar do srcset (pode estar em diferentes formatos)
+        # Procura por srcset="..." ou srcset='...'
+        srcset_patterns = [
+            r'srcset\s*=\s*["\']([^"\']+)["\']',
+            r'srcset\s*=\s*([^\s>]+)',
+        ]
+        
+        for pattern in srcset_patterns:
+            srcset_match = re.search(pattern, html, re.IGNORECASE)
+            if srcset_match:
+                srcset = srcset_match.group(1)
+                # Pega a primeira URL do srcset (geralmente a maior/resolução mais alta)
+                urls = [url.strip().split()[0] for url in srcset.split(',') if url.strip()]
+                if urls:
+                    # Prefere .avif ou .webp se disponível
+                    for url in urls:
+                        if '.avif' in url or '.webp' in url:
+                            return url
+                    return urls[0]
+        
+        # Tenta pegar URLs diretas de imagens CloudFront com formato moderno
+        cloudfront_pattern = r'https://[^"\'>\s]*cloudfront[^"\'>\s]*\.(avif|webp)'
+        cloudfront_match = re.search(cloudfront_pattern, html, re.IGNORECASE)
+        if cloudfront_match:
+            return cloudfront_match.group(0)
+        
+        # Tenta pegar da tag img com src
+        img_patterns = [
+            r'<img[^>]*src\s*=\s*["\'](https://[^"\']*cloudfront[^"\']*\.(avif|webp|jpg|jpeg|png))["\']',
+            r'<img[^>]*src\s*=\s*["\'](https://[^"\']*cloudfront[^"\']+)["\']',
+        ]
+        
+        for pattern in img_patterns:
+            img_match = re.search(pattern, html, re.IGNORECASE)
+            if img_match:
+                return img_match.group(1)
+            
+    except Exception as e:
+        print(f"[AVISO] Não foi possível extrair URL real de {page_url}: {e}")
+    
+    return None
+
+
 def parse_image_sitemap(xml_text):
     """
     Retorna lista de dicts:
@@ -71,6 +127,12 @@ def parse_image_sitemap(xml_text):
         image_url = img_url_el.text.strip() if img_url_el is not None else None
         image_title = title_el.text.strip() if title_el is not None else ""
         image_caption = caption_el.text.strip() if caption_el is not None else ""
+        
+        # Tenta extrair a URL real da imagem da página
+        real_image_url = extrair_url_real_imagem(page_url)
+        if real_image_url:
+            image_url = real_image_url
+            print(f"[INFO] URL real extraída: {image_url}")
 
         items.append(
             {
