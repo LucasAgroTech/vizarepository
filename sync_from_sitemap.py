@@ -83,7 +83,7 @@ def parse_image_sitemap(xml_text):
     return items
 
 
-def gerar_conteudo_e_seo(item, idioma="pt-BR"):
+def gerar_conteudo_e_seo(item, idioma="en-US"):
     """
     Usa IA para gerar:
     - JSON de SEO
@@ -96,53 +96,53 @@ def gerar_conteudo_e_seo(item, idioma="pt-BR"):
     image_caption = item["image_caption"]
 
     prompt = f"""
-Você é um especialista em SEO, blog e copy.
+You are an expert in SEO, blogging, and copywriting.
 
-Você vai receber os dados de uma imagem de um repositório de imagens premium:
+You will receive data from a premium image repository:
 
-- URL da página da imagem (landing): {page_url}
-- URL da imagem: {image_url}
-- Título da imagem: "{image_title}"
-- Caption/descrição da imagem: "{image_caption}"
+- Image page URL (landing): {page_url}
+- Image URL: {image_url}
+- Image title: "{image_title}"
+- Image caption/description: "{image_caption}"
 
-Tarefa:
+Task:
 
-1. Escolher um ANGLE de conteúdo para blog que faça sentido para essa imagem
-   (ex: lifestyle, fotografia, branding, inspiração visual, design, marketing, etc.).
+1. Choose a content ANGLE for a blog post that makes sense for this image
+   (e.g., lifestyle, photography, branding, visual inspiration, design, marketing, etc.).
 
-2. Criar um artigo COMPLETO em {idioma}, pensado para rankear bem em mecanismos de busca e gerar clique.
+2. Create a COMPLETE article in English, designed to rank well in search engines and generate clicks.
 
-O artigo deve:
+The article must:
 
-- Ser em Markdown.
-- Ter H1, H2, H3 bem estruturados.
-- Trazer contexto de uso da imagem (como usar em campanhas, posts, sites, ou que tipo de público ela atrai).
-- Ter CTA suave apontando para a página da imagem em {page_url} para download/licenciamento.
-- Incluir a imagem em Markdown no topo: ![ALT OTIMIZADO]({image_url})
-  onde o ALT deve ser descritivo e natural.
+- Be in Markdown format.
+- Have well-structured H1, H2, H3 headings.
+- Provide context on how to use the image (how to use in campaigns, posts, websites, or what type of audience it attracts).
+- Have a subtle CTA pointing to the image page at {page_url} for download/licensing.
+- Include the image in Markdown at the top: ![OPTIMIZED ALT]({image_url})
+  where the ALT should be descriptive and natural.
 
-Além do artigo, gere um JSON com os seguintes campos:
+In addition to the article, generate a JSON with the following fields:
 
-- seo_title: até 60 caracteres, com foco em CTR.
-- meta_description: até 155 caracteres, persuasiva.
-- slug: curto, em kebab-case (pode ser com base no tema do artigo, não apenas no título da imagem).
+- seo_title: up to 60 characters, focused on CTR.
+- meta_description: up to 155 characters, persuasive.
+- slug: short, in kebab-case (can be based on the article theme, not just the image title).
 - og_title
 - og_description
 - og_image: use {image_url}
-- canonical_url: use a própria URL do post que será /blog/<slug>/ (apenas o path, que depois eu completo).
-- tags: lista de 3-7 tags relevantes.
-- category: uma categoria principal (ex: "Fotografia", "Inspiração Visual", "Marketing Digital" etc.)
-- schema_org: JSON-LD de BlogPosting como STRING, válido para rich snippets.
-  Use {page_url} como mainEntityOfPage para referenciar a imagem original também.
+- canonical_url: use the post URL that will be /blog/<slug>/ (only the path, I'll complete it later).
+- tags: list of 3-7 relevant tags (in English).
+- category: a main category (e.g., "Photography", "Visual Inspiration", "Digital Marketing", etc.)
+- schema_org: BlogPosting JSON-LD as STRING, valid for rich snippets.
+  Use {page_url} as mainEntityOfPage to reference the original image as well.
 
-Responda EXATAMENTE no formato:
+Respond EXACTLY in this format:
 
 <SEO_JSON>
-{{ ...json aqui... }}
+{{ ...json here... }}
 </SEO_JSON>
 
 <ARTICLE_MD>
-# Título H1
+# H1 Title
 
 ...
 </ARTICLE_MD>
@@ -151,7 +151,7 @@ Responda EXATAMENTE no formato:
     response = client.chat.completions.create(
         model="gpt-4o-mini",
         messages=[
-            {"role": "system", "content": "Você é um especialista em SEO e criação de conteúdo para blogs."},
+            {"role": "system", "content": "You are an expert in SEO and blog content creation. Always generate content in English."},
             {"role": "user", "content": prompt}
         ],
         temperature=0.7,
@@ -189,7 +189,7 @@ layout: default
 title: "{seo.get('seo_title', '').replace('"', '\\"')}"
 seo_title: "{seo.get('seo_title', '').replace('"', '\\"')}"
 date: {hoje}
-lang: "pt-BR"
+lang: "en-US"
 
 slug: "{slug}"
 meta_description: "{seo.get('meta_description', '').replace('"', '\\"')}"
@@ -197,7 +197,8 @@ tags:
 """
 
     for tag in seo.get("tags", []):
-        front_matter += f'  - "{tag.replace(\'"\', \'\\"\')}"\n'
+        escaped_tag = tag.replace('"', '\\"')
+        front_matter += f'  - "{escaped_tag}"\n'
 
     front_matter += f"""category: "{seo.get('category', '').replace('"', '\\"')}"
 
