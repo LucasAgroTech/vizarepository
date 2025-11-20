@@ -16,8 +16,27 @@ layout: default
   </header>
   
   <div class="post-content">
+    {% if page.og_image %}
+    <div class="post-featured-image">
+      {% assign image_url = page.og_image %}
+      <img src="https://images.weserv.nl/?url={{ image_url | url_encode }}" alt="{{ page.title }}" loading="lazy" onerror="this.onerror=null; this.src='{{ image_url }}'; this.onerror=null;">
+    </div>
+    {% endif %}
     {{ content }}
   </div>
+  
+  <script>
+    // Proxy de imagens para contornar CORS
+    document.addEventListener('DOMContentLoaded', function() {
+      const images = document.querySelectorAll('.post-content img');
+      images.forEach(function(img) {
+        const src = img.getAttribute('src');
+        if (src && (src.includes('cloudfront.net') || src.includes('vizarepo.com')) && !src.includes('weserv.nl')) {
+          img.src = 'https://images.weserv.nl/?url=' + encodeURIComponent(src);
+        }
+      });
+    });
+  </script>
   
   {% if page.tags.size > 0 %}
     <div class="post-tags">
