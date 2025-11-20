@@ -128,12 +128,6 @@ def parse_image_sitemap(xml_text):
         image_url = img_url_el.text.strip() if img_url_el is not None else None
         image_title = title_el.text.strip() if title_el is not None else ""
         image_caption = caption_el.text.strip() if caption_el is not None else ""
-        
-        # Tenta extrair a URL real da imagem da página
-        real_image_url = extrair_url_real_imagem(page_url)
-        if real_image_url:
-            image_url = real_image_url
-            print(f"[INFO] URL real extraída: {image_url}")
 
         items.append(
             {
@@ -157,6 +151,15 @@ def gerar_conteudo_e_seo(item, idioma="en-US"):
     image_url = item["image_url"]
     image_title = item["image_title"]
     image_caption = item["image_caption"]
+    
+    # Extrai a URL real da imagem apenas quando for gerar o post (otimização)
+    print(f"[INFO] Extraindo URL real da imagem de: {page_url}")
+    real_image_url = extrair_url_real_imagem(page_url)
+    if real_image_url:
+        image_url = real_image_url
+        print(f"[INFO] ✅ URL real extraída: {image_url}")
+    else:
+        print(f"[AVISO] Usando URL do sitemap: {image_url}")
 
     prompt = f"""
 You are an expert in SEO, blogging, and copywriting.
