@@ -16,22 +16,29 @@ Sistema automatizado que transforma imagens do sitemap do VizaRepo em posts de b
 - Chave de API da OpenAI
 - Repositório Git configurado
 
-## 🚀 Instalação
+## 🚀 Instalação Rápida
 
-1. Clone o repositório:
+### Setup Inicial
+
+1. Execute o script de setup:
 ```bash
-git clone <seu-repo>
-cd seo-github
+./setup.sh
 ```
 
-2. Instale as dependências:
+Ou manualmente:
 ```bash
 pip install -r requirements.txt
 ```
 
-3. Configure a chave da OpenAI:
+2. Configure a chave da OpenAI:
 ```bash
 export OPENAI_API_KEY="sua_chave_aqui"
+```
+
+Para tornar permanente, adicione ao seu `~/.zshrc` ou `~/.bashrc`:
+```bash
+echo 'export OPENAI_API_KEY="sua_chave_aqui"' >> ~/.zshrc
+source ~/.zshrc
 ```
 
 ## 💻 Uso Local
