@@ -9,8 +9,8 @@ plugins:
   - jekyll-feed
   - jekyll-sitemap
 
-# Theme (usando tema mínimo)
-theme: minima
+# Theme (sem tema, usando layouts customizados)
+# theme: minima
 
 # Exclude from processing
 exclude:
