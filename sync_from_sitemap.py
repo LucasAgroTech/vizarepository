@@ -50,9 +50,10 @@ def extrair_url_real_imagem(page_url):
         resp.raise_for_status()
         html = resp.text
         
-        # Tenta pegar do srcset (pode estar em diferentes formatos)
-        # Procura por srcset="..." ou srcset='...'
+        # Tenta pegar do srcSet (com S maiúsculo, formato React/Next.js)
+        # Procura por srcSet="..." ou srcset="..."
         srcset_patterns = [
+            r'srcSet\s*=\s*["\']([^"\']+)["\']',
             r'srcset\s*=\s*["\']([^"\']+)["\']',
             r'srcset\s*=\s*([^\s>]+)',
         ]
