@@ -17,18 +17,18 @@ category: "Inspiração Visual"
 
 og_title: "Retratos em Preto e Branco: A Elegância do Corporativo"
 og_description: "Explore o uso de retratos elegantes para fortalecer sua marca em campanhas e redes sociais."
-og_image: "https://db08owkfvwq6e.cloudfront.net/3312.webp"
+og_image: "https://db08owkfvwq6e.cloudfront.net/images/7f4b0d79-8d55-4c5b-a74c-16481bf80269/e22667209c6c.avif"
 
 canonical_url: "/blog/retratos-elegantes-corporativos/"
 
 schema_org: >
-  {"@context":"http://schema.org","@type":"BlogPosting","headline":"Retratos em Preto e Branco: A Elegância do Corporativo","image":"https://db08owkfvwq6e.cloudfront.net/3312.webp","author":{"@type":"Person","name":"Seu Nome"},"publisher":{"@type":"Organization","name":"Nome do Seu Blog","logo":{"@type":"ImageObject","url":"URL do Logo"}},"datePublished":"2023-10-01","mainEntityOfPage":"https://www.vizarepo.com/i/3312-a-striking-black-and-white-portrait-showcases-a-woman-in-a-tailored-suit"}
+  {"@context":"http://schema.org","@type":"BlogPosting","headline":"Retratos em Preto e Branco: A Elegância do Corporativo","image":"https://db08owkfvwq6e.cloudfront.net/images/7f4b0d79-8d55-4c5b-a74c-16481bf80269/e22667209c6c.avif","author":{"@type":"Person","name":"Seu Nome"},"publisher":{"@type":"Organization","name":"Nome do Seu Blog","logo":{"@type":"ImageObject","url":"URL do Logo"}},"datePublished":"2023-10-01","mainEntityOfPage":"https://www.vizarepo.com/i/3312-a-striking-black-and-white-portrait-showcases-a-woman-in-a-tailored-suit"}
 ---
 
 
 # Retratos em Preto e Branco: A Elegância do Corporativo
 
-![Retrato em preto e branco de uma mulher em terno elegante](https://db08owkfvwq6e.cloudfront.net/3312.webp)
+![Retrato em preto e branco de uma mulher em terno elegante](https://db08owkfvwq6e.cloudfront.net/images/7f4b0d79-8d55-4c5b-a74c-16481bf80269/e22667209c6c.avif)
 
 Os retratos em preto e branco têm o poder de capturar a essência da elegância e sofisticação, especialmente em ambientes corporativos. A imagem de uma mulher em um terno ajustado, como a que apresentamos aqui, é um excelente exemplo de como a fotografia pode ser utilizada para comunicar uma forte mensagem de profissionalismo e estilo.
 

@@ -17,18 +17,18 @@ category: "Inspiração Visual"
 
 og_title: "Atleta em Ação: Inspire Seus Projetos com Imagens de Fitness"
 og_description: "Explore o uso de imagens de atletas para trazer motivação e energia às suas campanhas."
-og_image: "https://db08owkfvwq6e.cloudfront.net/3314.webp"
+og_image: "https://db08owkfvwq6e.cloudfront.net/images/47760965-d847-4026-9f0e-bddfbc4c698c/34fc86e8b0b0.avif"
 
 canonical_url: "/blog/imagens-de-atletas-fitness/"
 
 schema_org: >
-  {"@context":"https://schema.org","@type":"BlogPosting","headline":"Atleta em Ação: Inspire Seus Projetos com Imagens de Fitness","image":"https://db08owkfvwq6e.cloudfront.net/3314.webp","author":{"@type":"Person","name":"Seu Nome"},"publisher":{"@type":"Organization","name":"Nome da Sua Empresa","logo":{"@type":"ImageObject","url":"URL do Logo da Sua Empresa"}},"datePublished":"2023-10-01","mainEntityOfPage":"https://www.vizarepo.com/i/3314-image-3314"}
+  {"@context":"https://schema.org","@type":"BlogPosting","headline":"Atleta em Ação: Inspire Seus Projetos com Imagens de Fitness","image":"https://db08owkfvwq6e.cloudfront.net/images/47760965-d847-4026-9f0e-bddfbc4c698c/34fc86e8b0b0.avif","author":{"@type":"Person","name":"Seu Nome"},"publisher":{"@type":"Organization","name":"Nome da Sua Empresa","logo":{"@type":"ImageObject","url":"URL do Logo da Sua Empresa"}},"datePublished":"2023-10-01","mainEntityOfPage":"https://www.vizarepo.com/i/3314-image-3314"}
 ---
 
 
 # Imagens de Atletas: A Energia do Fitness em Seus Projetos
 
-![Atleta em ação durante treino explosivo](https://db08owkfvwq6e.cloudfront.net/3314.webp)
+![Atleta em ação durante treino explosivo](https://db08owkfvwq6e.cloudfront.net/images/47760965-d847-4026-9f0e-bddfbc4c698c/34fc86e8b0b0.avif)
 
 No mundo do marketing e da criação de conteúdo, as imagens desempenham um papel crucial na comunicação da mensagem desejada. Uma imagem poderosa pode atrair a atenção do público e transmitir emoções que muitas vezes as palavras não conseguem. Neste artigo, vamos explorar como imagens de atletas, como a que apresentamos acima, podem ser utilizadas para inspirar e motivar seu público.
 

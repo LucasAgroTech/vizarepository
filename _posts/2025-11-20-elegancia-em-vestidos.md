@@ -17,18 +17,18 @@ category: "Inspiração Visual"
 
 og_title: "Inspiração em Vestidos Elegantes para Ocasões Especiais"
 og_description: "Explore a sofisticação e elegância de vestidos para eventos especiais. Clique e inspire-se!"
-og_image: "https://db08owkfvwq6e.cloudfront.net/3313.webp"
+og_image: "https://db08owkfvwq6e.cloudfront.net/images/8cdc2197-2f8c-4e63-a3cc-87b982458ff9/b71b26c9fc33.avif"
 
 canonical_url: "/blog/elegancia-em-vestidos/"
 
 schema_org: >
-  {"@context":"https://schema.org","@type":"BlogPosting","headline":"Inspiração em Vestidos Elegantes para Ocasões Especiais","image":"https://db08owkfvwq6e.cloudfront.net/3313.webp","author":{"@type":"Person","name":"Seu Nome"},"publisher":{"@type":"Organization","name":"Sua Empresa","logo":{"@type":"ImageObject","url":"https://suaempresa.com/logo.png"}},"datePublished":"2023-10-01","mainEntityOfPage":"https://www.vizarepo.com/i/3313-a-woman-wears-an-elegant-dark-green-evening-gown-in-a-dimly-lit-vintage-room"}
+  {"@context":"https://schema.org","@type":"BlogPosting","headline":"Inspiração em Vestidos Elegantes para Ocasões Especiais","image":"https://db08owkfvwq6e.cloudfront.net/images/8cdc2197-2f8c-4e63-a3cc-87b982458ff9/b71b26c9fc33.avif","author":{"@type":"Person","name":"Seu Nome"},"publisher":{"@type":"Organization","name":"Sua Empresa","logo":{"@type":"ImageObject","url":"https://suaempresa.com/logo.png"}},"datePublished":"2023-10-01","mainEntityOfPage":"https://www.vizarepo.com/i/3313-a-woman-wears-an-elegant-dark-green-evening-gown-in-a-dimly-lit-vintage-room"}
 ---
 
 
 # Elegância em Vestidos: Inspiração para Ocasões Especiais
 
-![Uma mulher usa um vestido de noite verde escuro em um ambiente vintage dimly lit](https://db08owkfvwq6e.cloudfront.net/3313.webp)
+![Uma mulher usa um vestido de noite verde escuro em um ambiente vintage dimly lit](https://db08owkfvwq6e.cloudfront.net/images/8cdc2197-2f8c-4e63-a3cc-87b982458ff9/b71b26c9fc33.avif)
 
 A moda é uma poderosa forma de expressão, e vestuários elegantes são frequentemente escolhidos para ocasiões que exigem um toque especial de sofisticação. Neste artigo, vamos explorar como utilizar imagens de vestidos elegantes, como o que apresentamos acima, em suas campanhas de marketing e postagens nas redes sociais.
 
