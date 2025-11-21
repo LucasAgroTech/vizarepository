@@ -3,6 +3,9 @@ description: Premium stock images and visual inspiration
 url: https://lucasagrotech.github.io
 baseurl: /vizarepository
 
+# Google Analytics (adicione sua chave GA4 aqui)
+# google_analytics: G-XXXXXXXXXX
+
 # Build settings
 markdown: kramdown
 plugins:

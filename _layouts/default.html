@@ -44,6 +44,28 @@
     </script>
     {% endif %}
     
+    <!-- Google Analytics 4 - Filtro de Bots -->
+    {% if site.google_analytics %}
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      
+      // Filtrar bots conhecidos
+      const userAgent = navigator.userAgent.toLowerCase();
+      const isBot = /bot|crawler|spider|crawling|scraper|fetcher|headless|phantom|selenium|webdriver|curl|wget|python|java|php|ruby|perl|go-http|okhttp|httpie|postman|insomnia|apache|nginx|cloudflare|amazon|googlebot|bingbot|slurp|duckduckbot|baiduspider|yandexbot|sogou|exabot|facebot|ia_archiver/i.test(userAgent);
+      
+      if (!isBot) {
+        gtag('config', '{{ site.google_analytics }}', {
+          'anonymize_ip': true,
+          'allow_google_signals': false,
+          'allow_ad_personalization_signals': false
+        });
+      }
+    </script>
+    {% endif %}
+    
     <style>
         * {
             margin: 0;
