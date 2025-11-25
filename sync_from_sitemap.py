@@ -250,15 +250,23 @@ def salvar_post(seo, article_md):
     # Evitar quebras de linha malucas no schema_org
     schema_org = (seo.get("schema_org") or "").replace("\n", " ")
 
+    # Escapar aspas duplas para evitar problemas no YAML
+    seo_title_escaped = (seo.get('seo_title', '') or '').replace('"', '\\"')
+    meta_desc_escaped = (seo.get('meta_description', '') or '').replace('"', '\\"')
+    category_escaped = (seo.get('category', '') or '').replace('"', '\\"')
+    og_title_escaped = (seo.get('og_title', '') or '').replace('"', '\\"')
+    og_desc_escaped = (seo.get('og_description', '') or '').replace('"', '\\"')
+    og_image_url = seo.get('og_image', '') or ''
+
     front_matter = f"""---
 layout: post
-title: "{seo.get('seo_title', '').replace('"', '\\"')}"
-seo_title: "{seo.get('seo_title', '').replace('"', '\\"')}"
+title: "{seo_title_escaped}"
+seo_title: "{seo_title_escaped}"
 date: {hoje}
 lang: "en-US"
 
 slug: "{slug}"
-meta_description: "{seo.get('meta_description', '').replace('"', '\\"')}"
+meta_description: "{meta_desc_escaped}"
 tags:
 """
 
@@ -266,11 +274,11 @@ tags:
         escaped_tag = tag.replace('"', '\\"')
         front_matter += f'  - "{escaped_tag}"\n'
 
-    front_matter += f"""category: "{seo.get('category', '').replace('"', '\\"')}"
+    front_matter += f"""category: "{category_escaped}"
 
-og_title: "{seo.get('og_title', '').replace('"', '\\"')}"
-og_description: "{seo.get('og_description', '').replace('"', '\\"')}"
-og_image: "{seo.get('og_image', '')}"
+og_title: "{og_title_escaped}"
+og_description: "{og_desc_escaped}"
+og_image: "{og_image_url}"
 
 canonical_url: "{canonical_path}"
 
